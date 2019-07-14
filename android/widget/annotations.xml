@@ -1,0 +1,6 @@
+<root>
+    <item
+        name='android.widget.CompoundButton void setOnCheckedChangeListener(android.widget.CompoundButton.OnCheckedChangeListener)'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>

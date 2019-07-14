@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pilihan_bus">
+        <item>Pilih Bus</item>
+    </string-array>
+
+    <string-array name="Alamat_Pemberangkatan">
+        <item>Pilih Alamat Pemberangkatan</item>
+        <item>Jakarta</item>
+        <item>Bandung</item>
+        <item>Semarang</item>
+        <item>Banten</item>
+        <item>Sukabumi</item>
+        <item>Kupang</item>
+    </string-array>
+
+    <string-array name="Alamat_Tujuan">
+        <item>Pilih Alamat Tujuan</item>
+        <item>Jakarta</item>
+        <item>Bandung</item>
+        <item>Semarang</item>
+        <item>Banten</item>
+        <item>Sukabumi</item>
+        <item>Kupang</item>
+        </string-array>
+
+    <string-array name="Pilihan_Perjalanan">
+        <item>satu perjalanan</item>
+    </string-array>
+
+    <string-array name="Estimasi_Hari">
+        <item>Lama Penginapan</item>
+        <item>1 Hari</item>
+        <item>2 Hari</item>
+        <item>3 Hari</item>
+        <item>4 Hari</item>
+        <item>5 Hari</item>
+        <item>6 Hari</item>
+        <item>7 Hari</item>
+    </string-array>
+    <string-array name="Pilih_Tujuan">
+    <item>pilih alamat tujuan  </item>
+    </string-array>
+</resources>
