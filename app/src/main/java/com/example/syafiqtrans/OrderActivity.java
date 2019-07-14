@@ -85,7 +85,7 @@ public class OrderActivity extends AppCompatActivity {
                 String sDate = String.valueOf(date.getText());
                 Log.d("debug", "Onclick: " + sDate);
 
-                String bus = String.valueOf(pilihan_bus.getBytes());
+                String bus = pilihan_bus;
                 Log.d("debug", "Onclick: " + pilihan_bus);
 
 //                String bus = pilihan_bus.getBytes().toString();

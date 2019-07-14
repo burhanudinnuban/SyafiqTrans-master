@@ -47,10 +47,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         ViewHolder(View v) {
             super(v);
-            tv_tanggal_penjemputan = (TextView) v.findViewById(R.id.tv_tanggal_penjemputan);
-            tvTujuan = (TextView) v.findViewById(R.id.tvTujuan);
-            tv_bus= (TextView) v.findViewById(R.id.tv_bus);
-            tv_harga= (TextView) v.findViewById(R.id.tv_harga);
+            tv_tanggal_penjemputan = (TextView) v.findViewById(R.id.tv2);
+            tvTujuan = (TextView) v.findViewById(R.id.tv1);
+            tv_bus= (TextView) v.findViewById(R.id.tv3);
+            tv_harga= (TextView) v.findViewById(R.id.tv4);
             delete =  v.findViewById(R.id.hapus_btn);
 //            edit=  v.findViewById(R.id.edit_btn);
             order=  v.findViewById(R.id.order_btn);
@@ -120,8 +120,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v) {
                 mPrefHelper = new PreferenceHelper(ctx);
-                Log.d("debug", "onClick: "+rvData.get(position).getTanggal_penjemputan());
-                Intent intent = new Intent(ctx, OrderActivity.class);
+                Intent intent = new Intent(ctx, TransaksiActivity.class);
+                intent.putExtra("tanggal_penjemputan", rvData.get(position).getTanggal_penjemputan());
+                intent.putExtra("tujuan", rvData.get(position).getTujuan());
+                intent.putExtra("bus", rvData.get(position).getBus());
+                intent.putExtra("harga", rvData.get(position).getHarga());
+                ctx.startActivity(intent);
+            }
+        });
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPrefHelper = new PreferenceHelper(ctx);
+                Intent intent = new Intent(ctx, ViewDetailOrder.class);
+                intent.putExtra("id_order", rvData.get(position).getId_order());
                 intent.putExtra("tanggal_penjemputan", rvData.get(position).getTanggal_penjemputan());
                 intent.putExtra("tujuan", rvData.get(position).getTujuan());
                 intent.putExtra("bus", rvData.get(position).getBus());
