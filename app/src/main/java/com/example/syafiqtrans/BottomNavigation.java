@@ -69,6 +69,9 @@ public class BottomNavigation extends AppCompatActivity implements BottomNavigat
             case R.id.list_menu:
                 fragment = new ListFragment();
                 break;
+            case R.id.transaksi:
+                fragment = new TransaksiFragment();
+                break;
             case R.id.setting_menu:
                 fragment = new SettingFragment();
                 break;

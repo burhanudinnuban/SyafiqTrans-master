@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -81,6 +82,7 @@ public class login_activity extends AppCompatActivity {
                 }else if(mPassword.getText().toString().length()==0){
                     mPassword.setError("Password diperlukan!");
                 } else {
+                    Toast.makeText(login_activity.this, "LOGIN BERHASIL", Toast.LENGTH_LONG).show();
                     getTokenRest(sEmail, sPassword);
 
                 }}});

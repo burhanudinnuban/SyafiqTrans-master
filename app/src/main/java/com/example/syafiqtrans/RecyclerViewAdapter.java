@@ -121,6 +121,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             public void onClick(View v) {
                 mPrefHelper = new PreferenceHelper(ctx);
                 Intent intent = new Intent(ctx, TransaksiActivity.class);
+                intent.putExtra("id_order", rvData.get(position).getId_order());
                 intent.putExtra("tanggal_penjemputan", rvData.get(position).getTanggal_penjemputan());
                 intent.putExtra("tujuan", rvData.get(position).getTujuan());
                 intent.putExtra("bus", rvData.get(position).getBus());

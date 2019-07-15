@@ -9,7 +9,7 @@ public class model_data {
 
 
 
-    model_data(String tanggal_penjemputan, String tujuan, String bus, String harga, String id_order){
+    model_data(String id_order, String tanggal_penjemputan, String tujuan, String bus, String harga){
         this.id_order = id_order;
         this.tanggal_penjemputan = tanggal_penjemputan;
         this.tujuan = tujuan;

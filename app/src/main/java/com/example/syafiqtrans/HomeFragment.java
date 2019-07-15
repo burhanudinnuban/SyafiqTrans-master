@@ -30,15 +30,12 @@ public class HomeFragment extends Fragment  {
     private Intent context;
     ImageView img_brosur;
     private AlertDialog.Builder mBuilder;
-    ImageView img_brosur1;
-
 
     @Nullable
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.home_fragment, container, false);
             return view;
-
         }
 
         @Override
@@ -47,7 +44,6 @@ public class HomeFragment extends Fragment  {
             mPrefHelper = new PreferenceHelper(getContext());
             mDemoSlider = (SliderLayout)view.findViewById(R.id.slider);
             img_brosur = view.findViewById(R.id.brosur);
-            context = context;
             final ImageView image = new ImageView(getActivity());
             image.setImageResource(R.drawable.brosur);
             img_brosur.setOnClickListener(new View.OnClickListener() {

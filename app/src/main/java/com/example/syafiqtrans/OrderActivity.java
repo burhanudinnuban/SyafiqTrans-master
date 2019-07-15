@@ -88,24 +88,20 @@ public class OrderActivity extends AppCompatActivity {
                 String bus = pilihan_bus;
                 Log.d("debug", "Onclick: " + pilihan_bus);
 
-//                String bus = pilihan_bus.getBytes().toString();
-//                Log.d("debug", "Onclick: " + pilihan_bus);
-
                 String stujuan = tujuan.getSelectedItem().toString();
                 Log.d("debug", "Onclick: " + tujuan);
 
                 String sHarga = harga.getText().toString();
                 Log.d("debug", "Onclick: " + sHarga);
 
-//
-//                String sHarga = String.valueOf(harga.getText());
-//                Log.d("debug", "Onclick: " + sHarga);
-
-
-                if(date.getText().toString().length()==0){
-                    date.setError("Tanggal Diperlukan!");
+                if(date.getText().toString().length()==0) {
+                    Toast.makeText(OrderActivity.this, "Tanggal Diperlukan Mohon diisi!!", Toast.LENGTH_LONG).show();
+                }else if(pilihan_bus.length()==0){
+                    Toast.makeText(OrderActivity.this, "Tipe Bus Diperlukan Mohon diisi!!", Toast.LENGTH_LONG).show();
+                }else if(tujuan.getSelectedItem().toString().length()==0){
+                    Toast.makeText(OrderActivity.this, "Tujuan Pariwisata Mohon diisi!!", Toast.LENGTH_LONG).show();
                 } else
-                    {
+                    { Toast.makeText(OrderActivity.this, "Order Berhasil Dimasukkan Silahkan Lakukan Transaksi!!", Toast.LENGTH_LONG).show();
                     getTokenRest(sDate, bus, stujuan, sHarga);
                 }
 

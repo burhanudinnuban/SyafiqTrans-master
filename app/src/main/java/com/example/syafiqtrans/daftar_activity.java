@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -65,6 +66,7 @@ public class daftar_activity extends AppCompatActivity {
                     mInputUsername.setError("Password diperlukan!");
                 }
                 else {
+                    Toast.makeText(daftar_activity.this, "AKUN BERHASIL DIBUAT SILAHKAN CEK EMAIL UNTUK KONFIRMASI AKUN!!!", Toast.LENGTH_LONG).show();
                     getTokenRest(sEmail, sPassword, sUsername);
                 }
             }});
