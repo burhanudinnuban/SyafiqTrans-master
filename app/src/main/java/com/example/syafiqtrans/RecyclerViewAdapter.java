@@ -86,7 +86,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             public void onClick(View v) {
                 mPrefHelper = new PreferenceHelper(ctx);
                 Log.d("debug", "onClick: "+rvData.get(position).getId_order());
-                String url = "http://193.168.195.201/burhan/index.php/Rest/RestUser/delete";
+                String url = "http://193.168.195.201/burhan/index.php/Rest/RestUser/delete_order";
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -153,7 +153,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v) {
                 mPrefHelper = new PreferenceHelper(ctx);
-                Intent intent = new Intent(ctx, ViewDetailOrder.class);
+                Intent intent = new Intent(ctx, DetailViewOrder.class);
                 intent.putExtra("id_order", rvData.get(position).getId_order());
                 intent.putExtra("tanggal_penjemputan", rvData.get(position).getTanggal_penjemputan());
                 intent.putExtra("tujuan", rvData.get(position).getTujuan());
@@ -162,6 +162,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 ctx.startActivity(intent);
             }
         });
+
     }
 
     @Override

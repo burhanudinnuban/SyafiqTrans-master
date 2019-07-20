@@ -13,11 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".TransaksiActivity"></activity>
         <activity
-            android:name=".ViewDetailOrder"
+            android:name=".UpdateOrder"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".DetailViewOrder"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".TransaksiActivity" />
         <activity
             android:name=".login_activity"
             android:label="@string/app_name"
