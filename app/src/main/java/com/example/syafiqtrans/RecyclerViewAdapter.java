@@ -1,8 +1,11 @@
 package com.example.syafiqtrans;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,23 +17,25 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.syafiqtrans.R.layout.activity_transaksi;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private ArrayList<model_data> rvData;
 
     Context ctx;
+    Context context;
     PreferenceHelper mPrefHelper;
 
-    RecyclerViewAdapter(Context ctx, ArrayList<model_data> inputData) {
+    public RecyclerViewAdapter(Context ctx, ArrayList<model_data> inputData) {
         rvData = inputData;
-        this.ctx = ctx;
-    }
-
+        this.ctx = ctx; }
     class ViewHolder extends RecyclerView.ViewHolder {
 
         // di tutorial ini kita hanya menggunakan data String untuk tiap item
@@ -117,16 +122,31 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             }
         });
         holder.order.setOnClickListener(new View.OnClickListener() {
+            private Object TransaksiActivity;
+
             @Override
             public void onClick(View v) {
-                mPrefHelper = new PreferenceHelper(ctx);
-                Intent intent = new Intent(ctx, TransaksiActivity.class);
-                intent.putExtra("id_order", rvData.get(position).getId_order());
-                intent.putExtra("tanggal_penjemputan", rvData.get(position).getTanggal_penjemputan());
-                intent.putExtra("tujuan", rvData.get(position).getTujuan());
-                intent.putExtra("bus", rvData.get(position).getBus());
-                intent.putExtra("harga", rvData.get(position).getHarga());
-                ctx.startActivity(intent);
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ctx);
+                TransaksiActivity = com.example.syafiqtrans.TransaksiActivity.class;
+                // set title dialog
+                alertDialogBuilder.setTitle("Brosur PO.SyafiqTrans");
+
+                // set pesan dari dialog
+                alertDialogBuilder
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setView((View) TransaksiActivity)
+                        .setPositiveButton("OK",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int which) {
+                                // jika tombol diklik, maka akan menutup activity ini
+                                dialog.dismiss();
+                            }
+                        });
+
+                // membuat alert dialog dari builder
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // menampilkan alert dialog
+                alertDialog.show();
             }
         });
         holder.view.setOnClickListener(new View.OnClickListener() {

@@ -1,181 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.GridLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_gravity="center_vertical"
-    android:layout_gravity="center_vertical"
-    app:columnCount="2"
-    app:rowCount="2">
+    android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        app:cardBackgroundColor="#76FF03"
-        android:layout_margin="@dimen/fab_margin"
-        android:layout_marginRight="0dp">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-        <RelativeLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16sp"
+        app:cardBackgroundColor="#F1F8E9">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@drawable/user_icon" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/profile"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:text="Profile"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp" />
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        app:cardBackgroundColor="#FFD600"
-        android:layout_marginLeft="60dp"
-        android:layout_margin="@dimen/fab_margin">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="7dp">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/change_password"
-                android:src="@drawable/password_icon"/>
+                android:background="@drawable/user_icon"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/change_password"
-                android:layout_centerHorizontal="true"
-                android:text="Ganti Password"/>
-        </RelativeLayout>
+                android:text="Account Profile"/>
+        </LinearLayout>
     </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        app:cardBackgroundColor="#6200EA"
-        android:layout_marginRight="0dp"
-        android:layout_margin="@dimen/fab_margin">
-        <RelativeLayout
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16sp"
+            app:cardBackgroundColor="#F1F8E9">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="7dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/user_icon"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="About Me"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/about"
-                android:src="@drawable/user_icon"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/about"
-                android:layout_centerHorizontal="true"
-                android:text="About me"/>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        app:cardBackgroundColor="#AA00FF"
-        android:layout_marginLeft="60dp"
-        android:layout_margin="@dimen/fab_margin">
-        <RelativeLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16sp"
+            app:cardBackgroundColor="#F1F8E9">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="7dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_bus"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Company Profile"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/help"
-                android:src="@drawable/ic_help"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/help"
-                android:layout_centerHorizontal="true"
-                android:text="Bantuan"/>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        app:cardBackgroundColor="#FF6D00"
-        android:layout_marginRight="0dp"
-        android:layout_margin="@dimen/fab_margin">
-        <RelativeLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16sp"
+            app:cardBackgroundColor="#F1F8E9">
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/remove_akun"
-                android:src="@drawable/ic_remove"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/remove_akun"
-                android:layout_centerHorizontal="true"
-                android:text="Hapus Akun"/>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        app:cardBackgroundColor="#00B8D4"
-        android:layout_marginLeft="60dp"
-        android:layout_margin="@dimen/fab_margin">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                android:orientation="horizontal"
+                android:layout_margin="7dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_help"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kritik dan Saran"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/kritik"
-                android:src="@drawable/note"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/kritik"
-                android:layout_centerHorizontal="true"
-                android:text="Kritik dan Saran"/>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
 
+</ScrollView>
 
-
-
-</android.support.v7.widget.GridLayout>
+</LinearLayout>

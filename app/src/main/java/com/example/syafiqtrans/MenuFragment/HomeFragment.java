@@ -1,4 +1,4 @@
-package com.example.syafiqtrans;
+package com.example.syafiqtrans.MenuFragment;
 
 
 import android.app.Activity;
@@ -19,6 +19,8 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
+import com.example.syafiqtrans.PreferenceHelper;
+import com.example.syafiqtrans.R;
 
 import java.util.HashMap;
 

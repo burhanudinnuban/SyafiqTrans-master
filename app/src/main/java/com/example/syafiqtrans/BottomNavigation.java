@@ -10,6 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.syafiqtrans.MenuFragment.HomeFragment;
+import com.example.syafiqtrans.MenuFragment.ListFragment;
+import com.example.syafiqtrans.MenuFragment.SettingFragment;
+
 public class BottomNavigation extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     TextView btn_add;
     TextView btn_logout;
@@ -68,9 +72,6 @@ public class BottomNavigation extends AppCompatActivity implements BottomNavigat
                 break;
             case R.id.list_menu:
                 fragment = new ListFragment();
-                break;
-            case R.id.transaksi:
-                fragment = new TransaksiFragment();
                 break;
             case R.id.setting_menu:
                 fragment = new SettingFragment();
