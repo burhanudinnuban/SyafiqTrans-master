@@ -1,9 +1,11 @@
 package com.example.syafiqtrans;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +25,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.syafiqtrans.MenuFragment.ListFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -272,6 +275,8 @@ public class OrderActivity extends AppCompatActivity {
                     String hasil_pesan = jObject.getString("pesan");
                     String hasil_respon = jObject.getString("respon");
                     Log.d("debug", "Onclick: " + hasil_respon);
+                    Intent pindah = new Intent(getApplicationContext(), BottomNavigation.class);
+                    startActivity(pindah);
 
                     if (hasil_respon.equals("200")){
                         Log.d("debug", "USER BERHASIL DIMASUKKAN: "+hasil_pesan);
@@ -284,8 +289,6 @@ public class OrderActivity extends AppCompatActivity {
                         TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
                         textView.setTextColor(Color.YELLOW);
                         snackbar.show();
-                        finish();
-
                     }else{
                         Snackbar snackbar = Snackbar
                                 .make(mRelmain1, hasil_pesan, Snackbar.LENGTH_LONG)
@@ -302,6 +305,9 @@ public class OrderActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+
+
             }
         }, new Response.ErrorListener() { //Create an error listener to handle errors appropriately.
             @Override

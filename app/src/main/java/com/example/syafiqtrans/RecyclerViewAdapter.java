@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
 import android.util.Log;
@@ -13,10 +14,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.syafiqtrans.MenuFragment.ListFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -81,6 +85,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.tvTujuan.setText(rvData.get(position).getTujuan());
         holder.tv_harga.setText(rvData.get(position).getHarga());
         holder.tv_bus.setText(rvData.get(position).getBus());
+
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +104,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
+                        Intent intent = new Intent("broadcast");
+                        intent.putExtra("message","getdata");
+                        LocalBroadcastManager.getInstance(ctx).sendBroadcast(intent);
+                        Log.e("recycleradapter", "mchange = " + "asd");
+                        Toast.makeText(ctx,"Data berhasil terhapus", Toast.LENGTH_SHORT).show();
                     }
                 }, new Response.ErrorListener() { //Create an error listener to handle errors appropriately.
                     @Override
@@ -162,6 +173,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 ctx.startActivity(intent);
             }
         });
+
+
 
     }
 

@@ -91,6 +91,7 @@ public class UpdateOrder extends AppCompatActivity {
                 String sHarga = harga.getText().toString();
                 Log.d("debug", "Onclick: " + sHarga);
 
+
                 if(date.getText().toString().length()==0) {
                     Toast.makeText(UpdateOrder.this, "Tanggal Diperlukan Mohon diisi!!", Toast.LENGTH_LONG).show();
                 }else if(pilihan_bus.length()==0){
@@ -233,8 +234,6 @@ public class UpdateOrder extends AppCompatActivity {
                             harga.setText(hargahiace);
                         }
                     }
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -282,7 +281,6 @@ public class UpdateOrder extends AppCompatActivity {
                         textView.setTextColor(Color.YELLOW);
                         snackbar.show();
                         finish();
-
                     }else{
                         Snackbar snackbar = Snackbar
                                 .make(mRelmain1, hasil_pesan, Snackbar.LENGTH_LONG)
@@ -307,7 +305,10 @@ public class UpdateOrder extends AppCompatActivity {
             }
         }) {
             protected Map<String, String> getParams() {
+                String id_order = getIntent().getStringExtra("id_order");
+                Log.d("DEBUG", "getParams: "+date+bus+tujuan+sHarga+id_order);
                 Map<String, String> MyData = new HashMap<String, String>();
+                MyData.put("id_order", id_order);
                 MyData.put("tanggal_penjemputan", date);
                 MyData.put("bus", bus);
                 MyData.put("tujuan", tujuan);

@@ -67,6 +67,7 @@ Button edit;
             @Override
             public void onClick(View v) {
                 Intent edit = new Intent(getApplicationContext(),UpdateOrder.class);
+                edit.putExtra("id_order",id_order1.getText().toString());
                 startActivity(edit);
             }
         });

@@ -1,10 +1,14 @@
 package com.example.syafiqtrans.MenuFragment;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -107,6 +111,31 @@ public class ListFragment extends Fragment {
         NetworkRequest.getInstance(getContext()).addToRequestQueue(stringRequest);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        LocalBroadcastManager.getInstance(ctx).registerReceiver(mMessageReceiver,new IntentFilter("broadcast"));
+    }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        LocalBroadcastManager.getInstance(ctx).unregisterReceiver(mMessageReceiver);
 
+    }
+
+    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String mChange = intent.getStringExtra("message");
+
+            //Log.d(TAG, "onReceive: ");
+            if (mChange==null){
+                mChange ="0";
+            }
+            if (mChange.equals("getdata")){
+                getdatalistcustomer();
+            }
+        }
+    };
 }
