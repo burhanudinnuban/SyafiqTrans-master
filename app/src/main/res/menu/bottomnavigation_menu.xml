@@ -12,11 +12,6 @@
         android:icon="@drawable/ic_add_order"/>
 
     <item
-        android:id="@+id/transaksi"
-        android:title="Transaksi"
-        android:icon="@drawable/ic_add_shop"/>
-
-    <item
         android:id="@+id/setting_menu"
         android:title="@string/setting"
         android:icon="@drawable/ic_setting"/>

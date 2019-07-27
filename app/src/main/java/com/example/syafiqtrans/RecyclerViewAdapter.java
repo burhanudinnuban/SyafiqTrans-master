@@ -1,6 +1,7 @@
 package com.example.syafiqtrans;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -34,7 +35,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private ArrayList<model_data> rvData;
 
     Context ctx;
-    Context context;
     PreferenceHelper mPrefHelper;
 
     public RecyclerViewAdapter(Context ctx, ArrayList<model_data> inputData) {
@@ -48,7 +48,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView tv_bus;
         TextView tv_harga;
         ImageView delete;
-        Button edit;
         ImageView order;
         ImageView view;
 
@@ -137,27 +136,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ctx);
-                TransaksiActivity = com.example.syafiqtrans.TransaksiActivity.class;
-                // set title dialog
-                alertDialogBuilder.setTitle("Brosur PO.SyafiqTrans");
-
-                // set pesan dari dialog
-                alertDialogBuilder
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setView((View) TransaksiActivity)
-                        .setPositiveButton("OK",new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,int which) {
-                                // jika tombol diklik, maka akan menutup activity ini
-                                dialog.dismiss();
-                            }
-                        });
-
-                // membuat alert dialog dari builder
-                AlertDialog alertDialog = alertDialogBuilder.create();
-
-                // menampilkan alert dialog
-                alertDialog.show();
+                final Dialog dialog = new Dialog(ctx);
+                dialog.setContentView(activity_transaksi);
+                dialog.setTitle("Transaksi Order");
+                dialog.show();
             }
         });
         holder.view.setOnClickListener(new View.OnClickListener() {
@@ -173,9 +155,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 ctx.startActivity(intent);
             }
         });
-
-
-
     }
 
     @Override

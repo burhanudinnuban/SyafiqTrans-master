@@ -31,7 +31,6 @@ public class login_activity extends AppCompatActivity {
     TextView txtLupa_password;
     PreferenceHelper mPrefHelper;
 
-
     public void onCreate(Bundle SaveInstanceState) {
         super.onCreate(SaveInstanceState);
         setContentView(R.layout.login);

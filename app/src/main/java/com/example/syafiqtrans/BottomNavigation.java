@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -24,7 +25,6 @@ public class BottomNavigation extends AppCompatActivity implements BottomNavigat
         btn_add = findViewById(R.id.btn_add);
         btn_logout = findViewById(R.id.btn_logout);
         mPrefHelper = new PreferenceHelper(getApplicationContext());
-
 
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +49,18 @@ public class BottomNavigation extends AppCompatActivity implements BottomNavigat
         BottomNavigationView bottomNavigationView = findViewById(R.id.bn_main);
         // beri listener pada saat item/menu bottomnavigation terpilih
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
+        Bundle extras = getIntent().getExtras();
+        String Fragment = "";
+
+        if (extras != null) {
+            Fragment = extras.getString("fragment");
+            // and get whatever type user account id is
+            if (Fragment.equals("ListFragment")){
+                loadFragment(new ListFragment());
+            };
+        }
+        Log.d("Debug", "onCreate: "+Fragment);
 
     }
 

@@ -1,6 +1,7 @@
 package com.example.syafiqtrans;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -23,6 +24,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.syafiqtrans.MenuFragment.ListFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -268,6 +270,10 @@ public class UpdateOrder extends AppCompatActivity {
                     String hasil_pesan = jObject.getString("status");
                     String hasil_respon = jObject.getString("id_order");
                     Log.d("debug", "Onclick: " + hasil_respon);
+                    Intent intent = new Intent(UpdateOrder.this,BottomNavigation.class);
+                    intent.putExtra("fragment","ListFragment");
+                    startActivity(intent);
+
 
                     if (hasil_respon.equals("200")){
                         Log.d("debug", "ORDER BERHASIL DIGANTI: "+hasil_pesan);
@@ -281,6 +287,7 @@ public class UpdateOrder extends AppCompatActivity {
                         textView.setTextColor(Color.YELLOW);
                         snackbar.show();
                         finish();
+
                     }else{
                         Snackbar snackbar = Snackbar
                                 .make(mRelmain1, hasil_pesan, Snackbar.LENGTH_LONG)
